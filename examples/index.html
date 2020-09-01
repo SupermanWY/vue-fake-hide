@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+<script crossorigin="anonymous" integrity="sha384-+jvb+jCJ37FkNjPyYLI3KJzQeD8pPFXUra3B/QJFqQ3txYrUPIP1eOfxK4h3cKZP" src="https://lib.baomitu.com/vue/2.6.11/vue.js"></script>
+<script src="../dist/fake-hide.js"></script>
+
+<script>
+  Vue.use(fakeHide.default)
+
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        hide: true
+      }
+    },
+    template: `
+      <div v-fake-hide.opacity="hide">1111111</div>
+    `,
+    mounted() {
+      setInterval(() => {
+        this.hide = !this.hide
+      }, 1000)
+    },
+  })
+</script>
