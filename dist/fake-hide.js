@@ -36,7 +36,7 @@
       translateMap.set(el, translate);
       el.style.transform = 'translateX(9999999px)';
     } else {
-      el.style.translate = translateMap.get(el);
+      el.style.transform = translateMap.get(el);
     }
   }
 
